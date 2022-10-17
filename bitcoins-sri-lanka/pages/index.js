@@ -18,25 +18,23 @@ export default function Home() {
       <Head>
         <title>Bitcoins Sri Lanka</title>
       </Head>
-      {/* Create Hero with DaisyUI and Tailwind */}
       <div className="hero flex flex-col justify-center items-center mt-20">
         <h1 className="hero__title text-5xl font-bold text-center">
           Bitcoins Sri Lanka
         </h1>
-        <p className="hero__subtitle text-3xl text-center mt-20">
+        <p className="hero__subtitle text-3xl text-center mt-10 p-10">
           We're bringing Bitcoin to everyone in Sri Lanka. Join us and be part
           of a decentralised economy.
         </p>
       </div>
       <div className="flex flex-col justify-center items-center mt-20 mb-10">
-        {/* Button that leads to /map */}
         <div className="flex justify-center mt-10">
           <a href="/map" className="btn btn-primary btn-lg">
             View Map
           </a>
         </div>
       </div>
-      <div className="bg-gray-100 pt-10">
+      <div className="bg-gray-100 pt-10 pb-10">
         <div className="flex flex-col justify-center items-center mt-10">
           <h1 className="hero__title text-5xl font-bold text-center">
             What is Bitcoin?
@@ -57,6 +55,7 @@ export default function Home() {
                   alt="Whitepaper"
                   width="100"
                   height="100"
+                  className="pl-4 pr-4"
                 />
               </a>
             </div>
@@ -70,6 +69,7 @@ export default function Home() {
                   alt="Wallets"
                   width="100"
                   height="100"
+                  className="pl-4 pr-4"
                 />
               </a>
             </div>
@@ -83,11 +83,12 @@ export default function Home() {
                   alt="Youtube"
                   width="100"
                   height="100"
+                  className="pl-4 pr-4"
                 />
               </a>
             </div>
           </div>
-          <div className="flex flex-row justify-center items-center w-3/4 mb-10">
+          <div className="flex flex-row justify-center items-center w-3/4 mb-10 hidden md:block">
             <div className="w-1/3 flex flex-col justify-center items-center">
               <p className="hero__subtitle text-3xl text-center mt-20">
                 Whitepaper
@@ -106,6 +107,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="flex flex-col justify-center items-center w-full mt-10"></div>
     </div>
   );
 }
