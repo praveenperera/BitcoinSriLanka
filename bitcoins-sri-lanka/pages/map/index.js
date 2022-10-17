@@ -1,58 +1,82 @@
 import React from "react";
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker,
-} from "react-simple-maps";
+import GoogleMapReact from "google-map-react";
 
-const geoUrl =
-  // import map of asia
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/asia/asia.json";
-
-const markers = [
+const markerData = [
   {
-    markerOffset: -15,
-    name: "Buenos Aires",
-    coordinates: [6.93197, 79.85775],
+    name: "DOLCE VITA",
+    website:
+      "https://www.google.com/maps/place/7.23935131310299,79.8416537046432",
+    coords: {
+      lat: 7.3288233,
+      lng: 80.0231663,
+    },
+  },
+  {
+    name: "Tuk Tuk Rentals",
+    website: "https://tuktukrental.com/",
+    coords: {
+      lat: 7.167407463162577,
+      lng: 79.86723124980927,
+    },
+  },
+  {
+    name: "Spunky Monkey",
+    website: "https://www.wakeboardcamps.com/",
+    coords: {
+      lat: 6.1418546,
+      lng: 80.1175567,
+    },
   },
 ];
 
-const MapChart = () => {
-  return (
-    <ComposableMap
-      projection="geoAzimuthalEqualArea"
-      projectionConfig={{
-        rotate: [58, 20, 0],
-        scale: 400,
-      }}
-    >
-      <Geographies geography={geoUrl}>
-        {({ geographies }) =>
-          geographies.map((geo) => (
-            <Geography
-              key={geo.rsmKey}
-              geography={geo}
-              fill="#EAEAEC"
-              stroke="#D6D6DA"
-            />
-          ))
-        }
-      </Geographies>
-      {markers.map(({ name, coordinates, markerOffset }) => (
-        <Marker key={name} coordinates={coordinates}>
-          <circle r={10} fill="#F00" stroke="#fff" strokeWidth={2} />
-          <text
-            textAnchor="middle"
-            y={markerOffset}
-            style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
-          >
-            {name}
-          </text>
-        </Marker>
-      ))}
-    </ComposableMap>
-  );
-};
+const AnyReactComponent = ({ text, link }) => (
+  <div
+    style={{
+      color: "white",
+      background: "#3498db",
+      padding: "15px 15px",
+      display: "inline-flex",
+      textAlign: "center",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "100%",
+      transform: "translate(-50%, -50%)",
+    }}
+    onClick={() => {
+      window.open(link, "_blank");
+    }}
+  >
+    <p className="text-white">{text}</p>
+  </div>
+);
 
-export default MapChart;
+export default function SimpleMap() {
+  const defaultProps = {
+    center: {
+      lat: 7.8444,
+      lng: 80.637466,
+    },
+    zoom: 8.15,
+  };
+
+  return (
+    <div style={{ height: "100vh", width: "100%" }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyBgcXUwT_OSAhxLmYUlNGLsG6VOapxC8uY" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        {markerData.map(({ coords, name, website }) => {
+          return (
+            <AnyReactComponent
+              lat={coords.lat}
+              lng={coords.lng}
+              text={name}
+              link={website}
+            />
+          );
+        })}
+      </GoogleMapReact>
+    </div>
+  );
+}
