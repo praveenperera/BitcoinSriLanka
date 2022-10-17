@@ -21,7 +21,7 @@ const markerData = [
   },
   {
     name: "Spunky Monkey",
-    website: "https://www.wakeboardcamps.com/",
+    website: "http://www.wakeboardcamps.com/",
     coords: {
       lat: 6.1418546,
       lng: 80.1175567,
