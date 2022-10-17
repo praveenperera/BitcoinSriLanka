@@ -88,7 +88,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex flex-row justify-center items-center w-3/4 mb-10 hidden md:block">
+          <div className="flex flex-row justify-center items-center w-3/4 mb-10 hidden md:flex">
             <div className="w-1/3 flex flex-col justify-center items-center">
               <p className="hero__subtitle text-3xl text-center mt-20">
                 Whitepaper
