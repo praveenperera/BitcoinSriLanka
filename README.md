@@ -1,2 +1,1 @@
-# BitcoinsSriLanka
-Map of Bitcoin Merchants in Sri Lanka
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
