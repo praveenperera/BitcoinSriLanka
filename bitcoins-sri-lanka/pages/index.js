@@ -16,11 +16,11 @@ export default function Home() {
   return (
     <div data-theme="luxury">
       <Head>
-        <title>Bitcoins Sri Lanka</title>
+        <title>Bitcoin Sri Lanka</title>
       </Head>
       <div className="hero flex flex-col justify-center items-center mt-20">
         <h1 className="hero__title text-5xl font-bold text-center">
-          Bitcoins Sri Lanka
+          Bitcoin Sri Lanka
         </h1>
         <p className="hero__subtitle text-3xl text-center mt-10 p-10">
           We're bringing Bitcoin to everyone in Sri Lanka. Join us and be part
